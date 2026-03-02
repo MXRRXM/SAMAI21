@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMAI 2 Project Proposal - TASI Academy</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #0056b3; }
+        .logo-placeholder { border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 10px; display: inline-block; width: 200px; height: 100px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .page-break { page-break-before: always; }
+    
+/* ===== Shared Tabs Navigation (added) ===== */
+.tabs-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(16, 21, 28, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 188, 212, 0.25);
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.tabs-nav .tabs-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tabs-nav .brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+.tabs-nav .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tabs-nav a.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 190, 197, 0.18);
+  color: rgba(224, 224, 224, 0.92);
+  font-size: 0.95em;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.tabs-nav a.tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 188, 212, 0.55);
+  background: rgba(0, 188, 212, 0.08);
+}
+.tabs-nav a.tab[aria-current="page"] {
+  border-color: rgba(0, 188, 212, 0.9);
+  background: rgba(0, 188, 212, 0.16);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(0, 188, 212, 0.22);
+}
+@media (prefers-color-scheme: light) {
+  .tabs-nav { background: rgba(255,255,255,0.9); border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .tabs-nav .brand { color: #111; }
+  .tabs-nav a.tab { color: rgba(17,17,17,0.85); border-color: rgba(0,0,0,0.12); }
+  .tabs-nav a.tab:hover { background: rgba(0, 86, 179, 0.07); border-color: rgba(0, 86, 179, 0.35); }
+  .tabs-nav a.tab[aria-current="page"] { background: rgba(0, 86, 179, 0.12); border-color: rgba(0, 86, 179, 0.65); box-shadow: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== Shared Tabs Navigation (added) ===== -->
+<nav class="tabs-nav" role="navigation" aria-label="Document tabs">
+  <div class="tabs-wrap">
+    <div class="brand">SAMAI 2 Docs</div>
+    <ul class="tabs">
+      <li><a class="tab" data-tab="home" href="index.html">01 Proposal</a></li>
+      <li><a class="tab" data-tab="technical" href="02%20Technical.html">02 Technical</a></li>
+      <li><a class="tab" data-tab="tier" href="03%20Tier.html">03 Tier</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <img src="manifest-xr-logo.png" alt="Manifest XR Logo" style="max-height: 100px; margin: 10px;">
+    <img src="sdaia-logo.png" alt="SDAIA Logo" style="max-height: 100px; margin: 10px;">
+    <img src="samai-2-logo.png" alt="SAMAI 2 Logo" style="max-height: 100px; margin: 10px;">
+</div>
+
+    <h1>Proposal: SAMAI 2 Project Technical Delivery</h1>
+    <p><strong>Prepared for:</strong> SAMAI 2 Programme</p>
+    <p><strong>Platform:</strong> TASI Academy (powered by Manifest XR)</p>
+
+    <hr>
+
+    <h2>Addendum 1: Technical Addendum: Platform Capabilities, Metrics and Tier Alignment</h2>
+
+    <h3>1. Executive Summary</h3>
+    <p>TASI Academy is the learning platform proposed for SAMAI 2. It delivers immersive, dual-language, assessment-ready training at scale. The platform supports the content types, interactivity, 1:1 support, and safety measures required by the programme. This addendum describes current platform capabilities, platform metrics and usage limits per tier, and alignment with the three-tier commercial structure (Essential Gateway, Catalyst, Vision 2030) at the stated scale (1M+ learners per year, up to 25,000 concurrent users).</p>
+
+    <h3>2. Alignment with Commercial Tiers</h3>
+    <p>The technical delivery is aligned with the three-tier model as follows:</p>
+
+    <table>
+        <tr>
+            <th>Tier</th>
+            <th>Programme investment</th>
+            <th>Cost per person per course</th>
+            <th>Technical specification</th>
+        </tr>
+        <tr>
+            <td>Essential Gateway</td>
+            <td>$12.99 million</td>
+            <td>$12.99</td>
+            <td>High playback and cached learning content</td>
+        </tr>
+        <tr>
+            <td>Catalyst</td>
+            <td>$19.99 million</td>
+            <td>$19.99</td>
+            <td>Mixed creation & consumption — balanced creation and consumption capabilities</td>
+        </tr>
+        <tr>
+            <td>Vision 2030</td>
+            <td>$49.99 million</td>
+            <td>$49.99</td>
+            <td>High content creation / prompting — advanced content creation, prompting, and applied AI development</td>
+        </tr>
+    </table>
+
+    <p>The Vision 2030 package includes all Essential Gateway and Catalyst capabilities, expanded webinar delivery, comprehensive regional promotional events, continuous programme iteration and improvement cycles, and adaptive updates reflecting global AI advancement. The metrics and limits in Section 9 reflect this tiered design.</p>
+
+    <h3>3. Content and Media Capabilities</h3>
+    <h4>3.1 Core Content Types</h4>
+    <ul>
+        <li><strong>Slides:</strong> AI-generated slide decks (title, key points, visual, script) per lesson for theory and concepts (e.g. Generative AI ecosystem, decision framework, prompt engineering).</li>
+        <li><strong>Audio narration:</strong> Pre-generated narration in English and Arabic per slide; language-specific playback with no per-user generation at runtime.</li>
+        <li><strong>Theory:</strong> Dedicated Theory tab per lesson (references, governance, “why it works”) in markdown.</li>
+        <li><strong>Video:</strong> Video lesson type for expert talks, demos, and sector-specific clips (e.g. SDAIA guidelines, tool walkthroughs).</li>
+        <li><strong>3D scenes:</strong> Multiple scene types (e.g. solar-system, neural-core, molecule, dna, custom GLB/GLTF) rendered in-browser for conceptual immersion and scenario-based learning; 3D is a first-class lesson type with the same progress and assessment flow.</li>
+    </ul>
+
+    <h4>3.2 Integrated Learning Experience</h4>
+    <p>Slides, audio, theory, and video are combined in a single lesson. Theory-heavy segments use slides + narration + Theory tab; applied demos use video; hands-on tasks use slides plus in-platform labs and simulations. Reinforcement uses quizzes and short reflection. The platform supports a unified learning object (video, slides, theory, quiz in one flow) and linking from video to specific slides or theory.</p>
+
+    <h3>4. Interactivity and Assessment</h3>
+    <h4>4.1 Quiz and Knowledge Checks</h4>
+    <p>Scenario-based MCQs per unit module, with explanations and automatic grading, used for knowledge checks and final quiz (e.g. 40% of grade), with immediate feedback and band (Pass / Merit / Distinction).</p>
+
+    <h4>4.2 Simulation (Role-Play)</h4>
+    <p>AI-driven role-play (scenario, role, objective, multi-turn chat with the AI in character) for applied practicals (e.g. “Discuss with a simulated stakeholder,” “Justify your AI tool choice to a compliance officer”), assessing application and communication.</p>
+
+    <h4>4.3 3D for Immersive Learning</h4>
+    <p>3D scenes clarify complex ideas (data flow, model vs user, agent loop) as environments, increase engagement, and provide workplace-like decision contexts. Thematic scenes support conceptual modules; custom 3D models support sector-specific scenes. Branching scenarios in 3D (decision points with consequences) and VR-ready consumption (e.g. WebXR) are supported where appropriate for the Vision 2030 tier.</p>
+
+    <h4>4.4 Rubric-Based Assessment and Safety</h4>
+    <p>Structured submissions (e.g. prompt + refinement + justification) are scored against rubrics. AI-assisted grading provides consistent, explainable scores; human moderation is used for borderline and flagged work. In-platform practicals, AI-answer detection, and human moderation support academic integrity. Scenario-based and justification-based tasks assess critical thinking.</p>
+
+    <h3>5. Dual Language and Accessibility</h3>
+    <p>Full dual language (EN/AR) with instant language toggle and RTL layout. Content and narration are generated and cached server-side in both languages to support scale (1M+ users/year, up to 25,000 concurrent) without per-user translation or TTS at runtime.</p>
+
+    <h3>6. Live Chat and 1:1 Interactions</h3>
+    <ul>
+        <li><strong>Study Assistant (live chat):</strong> In-player text chat with a context-aware AI assistant (current course and lesson), responding in EN or AR. Used for 1:1 support without leaving the lesson.</li>
+        <li><strong>Live voice (Gemini Live):</strong> Real-time voice sessions with the AI (speech-in, speech-out) for 1:1 voice coaching where enabled, supporting accessibility and higher tiers (Catalyst, Vision 2030).</li>
+    </ul>
+    <p>Meta-analyses show a significant positive impact on learning outcomes, with some studies indicating AI tutors can improve academic performance by up to 30% and double learning gains in less time than traditional methods.</p>
+
+    <h3>7. Live Webinars and Forums</h3>
+    <h4>7.1 Live Webinars</h4>
+    <p>Unit-aligned live sessions (demo, Q&A, sector spotlights); guest experts; recordings published as video lessons; in-session polls and quizzes feeding engagement analytics and optional participation scoring; post-webinar challenges linked to unit practical grade.</p>
+
+    <h4>7.2 Forums</h4>
+    <p>Per-unit or per-module forums; sector-specific threads; pinned “good examples”; AI-assisted first response (moderator-approved); “Solved” and “Good practice” badges and “Best of forum” feed.</p>
+
+    <h3>8. Platform Differentiation and Readiness</h3>
+    <p>Delivered capabilities include: dual-language pre-generated EN/AR narration; in-platform 3D in the lesson flow; simulation (role-play) as assessment; 1:1 chat and voice; AI-assisted rubric plus human moderation; adaptive path; “Explain my grade”; prompt playground with governance check;</p>
+
+    <h3>9. Platform Metrics and Usage Limits (Per Tier)</h3>
+    <p>The following metrics define the included usage and limits per participant per course, by tier. All figures are included entitlements within the programme; no additional per-user fees apply.</p>
+
+    <h4>9.1 AI Prompts and Study Assistant</h4>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Essential Gateway</th>
+            <th>Catalyst</th>
+            <th>Vision 2030</th>
+        </tr>
+        <tr>
+            <td>Study Assistant (chat) messages per user per module</td>
+            <td>200</td>
+            <td>500</td>
+            <td>1,200</td>
+        </tr>
+        <tr>
+            <td>Max messages per single session</td>
+            <td>20</td>
+            <td>40</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Live voice (1:1) minutes per user per course</td>
+            <td>—</td>
+            <td>30</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Prompt playground / sandbox prompts per user per course</td>
+            <td>100</td>
+            <td>400</td>
+            <td>1,000</td>
+        </tr>
+        <tr>
+            <td>Max prompts per single practical or assessment</td>
+            <td>15</td>
+            <td>25</td>
+            <td>50</td>
+        </tr>
+    </table>
+
+    <h4>9.2 Replays and Retries</h4>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Essential Gateway</th>
+            <th>Catalyst</th>
+            <th>Vision 2030</th>
+        </tr>
+        <tr>
+            <td>Slide / video replay</td>
+            <td>Unlimited (cached playback)</td>
+            <td>Unlimited (cached playback)</td>
+            <td>Unlimited (cached playback)</td>
+        </tr>
+        <tr>
+            <td>Simulation (role-play) attempts per scenario per user</td>
+            <td>3</td>
+            <td>5</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Quiz attempts per lesson or module quiz</td>
+            <td>2</td>
+            <td>3</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Final or unit quiz attempts</td>
+            <td>2</td>
+            <td>3</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Narration replay (per slide)</td>
+            <td>Unlimited</td>
+            <td>Unlimited</td>
+            <td>Unlimited</td>
+        </tr>
+    </table>
+
+    <h4>9.3 Interactions and Assessments</h4>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Essential Gateway</th>
+            <th>Catalyst</th>
+            <th>Vision 2030</th>
+        </tr>
+        <tr>
+            <td>Graded rubric-based practical submissions per user per course</td>
+            <td>12</td>
+            <td>18</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>AI-assisted rubric evaluations included per submission</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3 (including refinement loops)</td>
+        </tr>
+        <tr>
+            <td>3D interactive sessions (distinct 3D lessons/scenarios) per user per course</td>
+            <td>_</td>
+            <td>12</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Forum posts (new threads + replies) per user per course</td>
+            <td>_</td>
+            <td>50</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>Webinar live attendance slots per user per course</td>
+            <td>_</td>
+            <td>8</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Webinar recordings (on-demand)</td>
+            <td>_</td>
+            <td>Unlimited access</td>
+            <td>Unlimited access</td>
+        </tr>
+    </table>
+
+    <h4>9.4 Session and Concurrency</h4>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Value (all tiers)</th>
+        </tr>
+        <tr>
+            <td>Max concurrent users (platform)</td>
+            <td>25,000</td>
+        </tr>
+        <tr>
+            <td>Typical concurrent users (operational planning)</td>
+            <td>1,500–1,700</td>
+        </tr>
+        <tr>
+            <td>Peak concurrent users (completion periods)</td>
+            <td>Up to 16,000</td>
+        </tr>
+        <tr>
+            <td>Session timeout (inactivity)</td>
+            <td>30 minutes</td>
+        </tr>
+        <tr>
+            <td>Max session duration (continuous)</td>
+            <td>4 hours (then gentle re-auth prompt)</td>
+        </tr>
+    </table>
+
+    <h4>9.5 Certification and Completion</h4>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Value (all tiers)</th>
+        </tr>
+        <tr>
+            <td>Completion flag per module / unit</td>
+            <td>Emitted for integration (e.g. AthkaX, SDAIA) for co-branded certificate issuance</td>
+        </tr>
+        <tr>
+            <td>Automated AI evaluation of assignments</td>
+            <td>Included for all rubric-based practicals at scale</td>
+        </tr>
+        <tr>
+            <td>Certificate / micro-credential issuance</td>
+            <td>Per unit and per competency as per programme design</td>
+        </tr>
+    </table>
+
+    <h3>10. Tier Summary: Features and Limits</h3>
+    <ul>
+        <li><strong>Essential Gateway:</strong> High playback and cached learning content. Full access to slides, narration, theory, video, quiz, simulation, 3D scenes, Study Assistant (chat), dual language, forums, and unit-aligned webinars (including recordings). Limits: 200 chat messages, 100 sandbox prompts, 15 max prompts per assessment, 3 simulation attempts, 2 quiz attempts, 12 practical submissions, 8 3D sessions, 20 forum posts, 4 webinar live slots. No live voice.</li>
+        <li><strong>Catalyst:</strong> All Essential Gateway features plus balanced creation and consumption. Higher limits: 500 chat messages, 30 voice minutes, 400 sandbox prompts, 25 max prompts per assessment, 5 simulation attempts, 3 quiz attempts, 18 practical submissions, 12 3D sessions, 50 forum posts, 8 webinar live slots. Adaptive path, “Explain my grade,” prompt playground with governance check, micro-credentials per competency.</li>
+        <li><strong>Vision 2030:</strong> All Catalyst features plus high content creation and prompting. Highest limits: 1,200 chat messages, 90 voice minutes, 1,000 sandbox prompts, 50 max prompts per assessment, 10 simulation attempts, 5 quiz attempts, 24 practical submissions, 20 3D sessions, 120 forum posts, 16 webinar live slots. Immersive 3D decision rooms, VR-ready 3D where applicable, learner AI-use dashboard, anonymised peer comparison, expanded webinars and regional events, continuous iteration and adaptive updates.</li>
+    </ul>
+
+    <h3>11. Scale and Delivery Confidence</h3>
+    <p>The platform is designed for 1M+ learners per year and up to 25,000 concurrent users. Content and narration are generated and cached server-side; critical paths are sized for the stated concurrency. Security, anti-cheating, accessibility, and governance (in-platform work, AI-answer detection, human moderation, rubric-based assessment) are built into the design. Completion flags and automated AI evaluation support co-branded certification and grading at scale. All features and metrics described in this addendum are ready for delivery and aligned with the SAMAI 2 curriculum, assessment model, and the three-tier commercial structure set out in the non-technical proposal.</p>
+
+    <div class="page-break"></div>
+
+    <h2>Addendum 2: Platform Capabilities and Delivery Readiness</h2>
+
+    <h3>1. Content and Media Capabilities</h3>
+    <h4>1.1 Core Content Types</h4>
+    <p>The platform delivers each lesson through a combination of:</p>
+    <ul>
+        <li><strong>Slides:</strong> AI-generated slide decks (title, key points, visual, script) per lesson. Slides carry the main narrative for theory and concepts (e.g. Generative AI ecosystem, decision framework, prompt engineering).</li>
+        <li><strong>Audio narration:</strong> Every slide has pre-generated narration in English and Arabic. Playback is language-specific, with no per-user generation cost. Narration supports accessibility and allows learners to listen while reviewing.</li>
+        <li><strong>Theory:</strong> A dedicated Theory tab per lesson provides deeper material (references, governance, “why it works”) in markdown. Learners access extended theory without leaving the lesson.</li>
+        <li><strong>Video:</strong> The platform supports a dedicated video lesson type (with videoUrl). Expert talks, demos, and sector-specific clips (e.g. SDAIA guidelines, tool walkthroughs) are delivered in-course.</li>
+        <li><strong>3D scenes:</strong> Multiple 3D scene types (e.g. solar-system, neural-core, molecule, dna, custom GLB/GLTF models) are rendered in-browser. They are used for conceptual immersion (e.g. “AI ecosystem,” “data flow”) and for scenario-based 3D (workflows, agent behaviour). 3D is a first-class lesson type alongside slides and video, within the same progress and assessment flow.</li>
+    </ul>
+
+    <h4>1.2 Integrated Learning Experience</h4>
+    <p>Slides, audio, theory, and video work together in a single lesson:</p>
+    <ul>
+        <li>Theory-heavy segments use slides + narration + Theory tab.</li>
+        <li>Applied demos use video (full lesson or embedded block).</li>
+        <li>Hands-on tasks use slides for instructions plus in-platform labs and simulations.</li>
+        <li>Reinforcement uses quizzes and short reflection (e.g. text or poll) after each block.</li>
+    </ul>
+    <p>The platform supports a unified learning object: one lesson can combine video, slides, theory snippets, and quiz/assessment in a single flow. Video can be linked to specific slides or theory (e.g. timestamps) so learners can go deeper on demand.</p>
+
+    <h3>2. Interactivity and Assessment</h3>
+    <h4>2.1 Quiz and Knowledge Checks</h4>
+    <p>Scenario-based MCQs are generated per lesson/module, with explanations and automatic grading. Optional visual context is supported. These are used for knowledge checks per module and for the final quiz (e.g. 40% of grade), with immediate feedback and band (Pass / Merit / Distinction).</p>
+
+    <h4>2.2 Simulation (Role-Play)</h4>
+    <p>AI-driven role-play is built in: scenario, role, objective, and multi-turn chat with the AI in character. It is used for applied practicals (e.g. “Discuss with a simulated stakeholder,” “Justify your AI tool choice to a compliance officer”), assessing application and communication as well as knowledge.</p>
+
+    <h4>2.3 3D for Immersive Learning</h4>
+    <p>3D simulations and scenes are used to:</p>
+    <ul>
+        <li>Clarify complex ideas (data flow, model vs user, agent loop) as environments rather than only text or 2D diagrams.</li>
+        <li>Increase engagement and retention.</li>
+        <li>Provide workplace-like decision contexts (e.g. “You are in a government office; choose the right AI tool”).</li>
+    </ul>
+    <p>Thematic scenes (neural-core, molecule, solar-system) support conceptual modules; custom 3D models (GLB/GLTF) support sector-specific scenes (e.g. ministry building, control room, workflow). Branching scenarios in 3D (e.g. decision points with different consequences) are supported for critical thinking and application of the decision framework. The same 3D assets are structured so that VR-ready consumption (e.g. WebXR) can be offered where appropriate for the Vision 2030 tier.</p>
+
+    <h4>2.4 Rubric-Based Assessment and Safety</h4>
+    <p>Structured submissions (e.g. prompt + refinement + justification) are scored against rubrics with clear criteria. AI-assisted grading provides consistent, explainable scores; human moderation is used for borderline cases and flagged work, ensuring governance and fairness. In-platform practicals reduce cheating (work done inside the platform, not copy-pasted). AI-answer detection and human moderation support academic integrity. Scenario-based and justification-based tasks assess critical thinking.</p>
+
+    <h3>3. Dual Language and Accessibility</h3>
+    <p>Full dual language (EN/AR): Base content in English with a complete Arabic overlay (title, content, theory, slides, quiz, simulation). Instant language toggle is available in the player. RTL layout and translated assessments are supported so that every civil servant can learn in Arabic or English. Content and narration are generated and cached server-side in both languages; there is no per-user translation or TTS cost at runtime, enabling scale (1M+ users/year, up to 25k concurrent).</p>
+
+    <h3>4. Live Chat and 1:1 Interactions</h3>
+    <p>Study Assistant (live chat): An in-player text chat with a context-aware AI assistant (current course and lesson). It responds in the learner’s chosen language (EN or AR). Learners use it for 1:1 support (e.g. “How do I apply the decision framework here?” or “Explain chain-of-thought in this task”) without leaving the lesson. Live voice (Gemini Live): When the integration is enabled, the platform supports real-time voice sessions with the AI (speech-in, speech-out). This provides 1:1 voice coaching (e.g. practising explaining a prompt or justifying a tool choice aloud), supporting accessibility and higher tiers (Catalyst, Vision 2030). Live chat and 1:1 voice are both current platform capabilities used for direct learner support and engagement.</p>
+
+    <h3>5. Live Webinars and Forums</h3>
+    <h4>5.1 Live Webinars</h4>
+    <p>The platform supports live webinar integration for SAMAI 2:</p>
+    <ul>
+        <li>Unit-aligned sessions: After each unit (or key modules), live sessions for demo, Q&A, “common mistakes,” and sector spotlights.</li>
+        <li>Guest experts: SDAIA or sector leads can deliver short segments (e.g. responsible AI, real-world cases).</li>
+        <li>Recordings: Sessions can be recorded and published as video lessons in the same course (e.g. “Unit 1 live recap”) so absent learners can catch up.</li>
+        <li>In-session engagement: Live polls and quizzes can be pushed into the platform; results feed engagement analytics and optional participation scoring. A post-webinar challenge (e.g. one practical task) can be linked to the unit practical grade, connecting live events to in-platform assessment.</li>
+    </ul>
+
+    <h4>5.2 Forums</h4>
+    <p>Per-unit or per-module forums are supported (e.g. “Unit 1: Prompt Engineering”) for peer and facilitator discussion, sharing examples, and questions such as “Is this SDAIA-aligned?” Sector-specific threads (e.g. Health, Education, Municipal) support sector-tailored tips and scenarios. Pinned “good examples” allow moderators to surface strong prompt refinements (anonymised) as reusable patterns. AI-assisted first response can draft a short, SDAIA-aligned first reply for moderator approval, keeping tone consistent and response times short. “Solved” and “Good practice” badges and a “Best of forum” feed reinforce learning from the community.</p>
+
+    <h3>6. Platform Differentiation and Readiness</h3>
+    <p>The following capabilities are already implemented and position the platform ahead of typical industry offerings:</p>
+
+    <table>
+        <tr>
+            <th>Capability</th>
+            <th>Delivered benefit</th>
+        </tr>
+        <tr>
+            <td>Dual-language with pre-generated EN/AR narration</td>
+            <td>Full Arabic/English support with instant switch and no per-user translation/TTS cost at scale.</td>
+        </tr>
+        <tr>
+            <td>In-platform 3D scenes in the lesson flow</td>
+            <td>3D is part of the same lesson and assessment flow, not a separate app.</td>
+        </tr>
+        <tr>
+            <td>Simulation (role-play) as assessment</td>
+            <td>Assesses application and communication, aligned with hands-on and sector scenarios.</td>
+        </tr>
+        <tr>
+            <td>1:1 chat and voice inside the lesson</td>
+            <td>Context-aware support without leaving the lesson; supports UDL and andragogy.</td>
+        </tr>
+        <tr>
+            <td>AI-assisted rubric + human moderation</td>
+            <td>Scalable, explainable grading with human-in-the-loop for governance.</td>
+        </tr>
+        <tr>
+            <td>Adaptive path</td>
+            <td>Pre-assessment and in-module performance drive recommended path (e.g. extra practice or skip to advanced). Same curriculum, personalised journey.</td>
+        </tr>
+        <tr>
+            <td>“Explain my grade”</td>
+            <td>For each rubric criterion, learners can request a short, constructive explanation of their score from the same rubric logic.</td>
+        </tr>
+        <tr>
+            <td>Prompt playground with governance check</td>
+            <td>In-platform sandbox with a governance layer (e.g. checklist or light automated check) for data residency, bias, etc. before submission.</td>
+        </tr>
+        <tr>
+            <td>Anonymised peer comparison</td>
+            <td>After a practical, “Your approach vs typical approaches” (aggregate, anonymised) for reflection.</td>
+        </tr>
+        <tr>
+            <td>Micro-credentials per competency</td>
+            <td>Badges or micro-certs per competency (e.g. “Prompt engineering,” “Decision framework”) in addition to unit certificates; shareable (e.g. LinkedIn, SDAIA portal).</td>
+        </tr>
+        <tr>
+            <td>Immersive “decision room” (3D)</td>
+            <td>3D “room” per unit with multiple decision stations; completing all unlocks the unit quiz.</td>
+        </tr>
+        <tr>
+            <td>Learner AI-use dashboard</td>
+            <td>Light dashboard of usage per unit (e.g. prompts, time in sandbox, attempts) for reflection and responsible use.</td>
+        </tr>
+        <tr>
+            <td>Regenerate narration</td>
+            <td>One-click re-generation of EN/AR slide narration (e.g. after content or wording updates) without rebuilding the full lesson.</td>
+        </tr>
+    </table>
+
+    <h3>7. Tier Alignment</h3>
+    <ul>
+        <li><strong>Essential Gateway:</strong> Full access to slides, narration, theory, video, quiz, simulation, Study Assistant (chat), dual language, . Assessment via quiz and practical with rubric and human moderation.</li>
+        <li><strong>Catalyst:</strong> All Essential Gateway features, plus enhanced 1:1 support (including live voice where enabled), 3D scenes, Study Assistant (Chat), forums and unit aligned webinars (recordings) adaptive path, “Explain my grade,” prompt playground with governance check, and micro-credentials per competency.</li>
+        <li><strong>Vision 2030:</strong> All Catalyst features, plus immersive 3D decision rooms, VR-ready 3D where applicable, learner AI-use dashboard, anonymised peer comparison, and full forum and webinar engagement (live + recorded + challenges).</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>Addendum 3: SAMAI 2 Course Delivery on TASI Academy</h2>
+
+    <h3>1. Purpose and Scope</h3>
+    <p>This addendum provides technical detail on how TASI Academy (Manifest XR delivery platform) supports the SAMAI 2 programme: immersive learning, hands-on practical training, safety and anti-cheating, and critical thinking assessment. It aligns with the three commercial tiers—Essential Gateway, Catalyst, and Vision 2030—and with the scale target of 1M+ users over 12 months and up to 25,000 concurrent users.</p>
+
+    <h3>2 Course Structure (Aligned with SDAIA/SAMAI Expectations)</h3>
+    <p>The SAMAI 2 curriculum is delivered as six units (or equivalent modular structure) with &ge;60% hands-on practical and &le;40% theory/quiz, as agreed with SDAIA:</p>
+
+    <table>
+        <tr>
+            <th>Unit</th>
+            <th>Focus</th>
+            <th>Duration (indicative)</th>
+            <th>Theory vs Practical (design)</th>
+        </tr>
+        <tr>
+            <td>Unit 1</td>
+            <td>Prompt Engineering & AI Tools</td>
+            <td>3–4 hours</td>
+            <td>40% theory / 60% practical</td>
+        </tr>
+        <tr>
+            <td>Unit 2</td>
+            <td>Responsible AI and Compliance</td>
+            <td>2–3 hours</td>
+            <td>40% theory / 60% practical</td>
+        </tr>
+        <tr>
+            <td>Unit 3</td>
+            <td>Creative Media and Content Creation</td>
+            <td>3–4 hours</td>
+            <td>40% theory / 60% practical</td>
+        </tr>
+        <tr>
+            <td>Unit 4</td>
+            <td>AI Agents and Workflows</td>
+            <td>~12 hours</td>
+            <td>40% theory / 60% practical</td>
+        </tr>
+        <tr>
+            <td>Unit 5</td>
+            <td>Vibe Coding Tools</td>
+            <td>~4 hours</td>
+            <td>40% theory / 60% practical</td>
+        </tr>
+        <tr>
+            <td>Unit 6</td>
+            <td>Sector Application (Capstone)</td>
+            <td>2–4 hours</td>
+            <td>20% theory / 80% practical</td>
+        </tr>
+    </table>
+    <p>Design principles (from TASI Academy instructional design):Andragogy, cognitive load management, experiential learning, UDL (multiple representation, language, audio/visual aids, flexible access), pre-assessment, hinge questions, graded practical assignments, reflection/feedback, and unit completion certificates.</p>
+
+    <h4>2.1 Where Practicals Run</h4>
+    <p>All applied labs and practical tasks are built and run inside the TASI Academy platform (not only external links). Practical work is distributed across the course (not only in a final capstone), with module-level post-assessments that count toward the final grade. This ensures that assessment is tied to immersive, platform-hosted practicals and can be combined with the safety and anti-cheating measures below.</p>
+
+    <h3>3. Immersive Learning Experience on TASI</h3>
+    <p>TASI Academy delivers immersive, hands-on learning in the following ways:</p>
+    
+    <h4>3.1 Hands-On Practical Training (In-Platform)</h4>
+    <table>
+        <tr>
+            <th>Capability</th>
+            <th>Description</th>
+            <th>Tier Availability</th>
+        </tr>
+        <tr>
+            <td>Structured labs</td>
+            <td>Step-by-step practical tasks (e.g. policy rewrite with prompting, executive summary from raw data, tool selection justification) hosted in TASI Academy.</td>
+            <td>All tiers</td>
+        </tr>
+        <tr>
+            <td>Guided prompt builder</td>
+            <td>In-platform interface for building and refining prompts (role, context, format, constraints) with immediate feedback.</td>
+            <td>Catalyst, Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Sandbox / simulated AI interaction</td>
+            <td>Simulated or API-backed AI interactions for chain-of-thought and refinement exercises within the platform.</td>
+            <td>Catalyst, Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Scenario-based selectors</td>
+            <td>Drag-and-drop and scenario selectors (e.g. latency vs reasoning, task matching) to apply the AI decision framework.</td>
+            <td>All tiers</td>
+        </tr>
+        <tr>
+            <td>Multi-turn refinement challenges</td>
+            <td>Documented refinement loops (initial prompt &rarr; feedback &rarr; improved output) submitted and assessed in-platform.</td>
+            <td>Catalyst, Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Sector-specific practicals</td>
+            <td>Same structure with sector-tailored scenarios (e.g. government, health, education) as per SAMAI 2.</td>
+            <td>All tiers</td>
+        </tr>
+    </table>
+
+    <h4>3.2 Multimodal and Immersive Formats</h4>
+    <table>
+        <tr>
+            <th>Capability</th>
+            <th>Description</th>
+            <th>Tier Availability</th>
+        </tr>
+        <tr>
+            <td>Dual-language (EN/AR)</td>
+            <td>All course content and narration available in English and Arabic; RTL support; server-side generation to limit per-user API cost.</td>
+            <td>All tiers</td>
+        </tr>
+        <tr>
+            <td>Narrated lessons</td>
+            <td>Pre-generated narration (EN + AR) for slide-based lessons to support accessibility and reduce cognitive load.</td>
+            <td>All tiers</td>
+        </tr>
+        <tr>
+            <td>3D and visual assets</td>
+            <td>3D visualisations and interactive scenes (e.g. conceptual and scenario-based) where pedagogically appropriate.</td>
+            <td>Catalyst, Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Simulations</td>
+            <td>Role-play and scenario simulations (e.g. decision-making, compliance, tool selection) inside the platform.</td>
+            <td>Catalyst, Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Desktop, tablet, mobile</td>
+            <td>Responsive access so that practicals and assessments can be completed across devices.</td>
+            <td>All tiers</td>
+        </tr>
+    </table>
+
+    <h4>3.3 Support and Community</h4>
+    <table>
+        <tr>
+            <th>Capability</th>
+            <th>Description</th>
+            <th>Tier Availability</th>
+        </tr>
+        <tr>
+            <td>One-to-one AI support agent</td>
+            <td>In-platform chat/agent to guide learners through the course and practicals without leaving TASI.</td>
+            <td>Catalyst, Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Professional forum</td>
+            <td>Integrated forum for peer support, sharing practice, and nationwide network (when enabled).</td>
+            <td>Vision 2030</td>
+        </tr>
+        <tr>
+            <td>Hinge questions and reflection</td>
+            <td>In-module checks and reflection points to reinforce understanding and critical thinking.</td>
+            <td>All tiers</td>
+        </tr>
+    </table>
+
+    <h3>4. Assessment via Immersive Practicals</h3>
+    <p>Assessment is designed so that a substantial part of the grade comes from doing, not only from theory quizzes: Final assessment structure (example for Unit 1–style design):</p>
+    <ul>
+        <li>Quiz (theory): e.g. 40% — scenario-based, auto-graded.</li>
+        <li>Practical (application): e.g. 60% — tasks completed inside TASI Academy (model selection justification, structured prompt design and refinement, executive summary from raw data, critical output evaluation).</li>
+        <li>Ongoing practical contribution: Module-level practical tasks (e.g. post-module labs) count toward the final grade, so assessment is continuous and tied to platform-hosted practicals.</li>
+    </ul>
+    <p>Structured submission format: Participants submit in defined sections (e.g. Tool Selection Justification; Prompt v1; Refined Prompt v2; Final Output; Output Evaluation). This supports reliable, rubric-based scoring and anti-cheating analysis (see below).</p>
+
+    <h3>5. Safety and Anti-Cheating Mechanisms</h3>
+    <p>TASI implements safety and anti-cheating so that assessment reflects genuine learner work and responsible use of AI.</p>
+
+    <h4>5.1 Assessment Designed Around Immersive Practicals</h4>
+    <ul>
+        <li>Practicals are in-platform: Labs, sandbox interactions, and scenario tasks are completed inside TASI, with activity and submission data available for analysis.</li>
+        <li>Structured, rubric-based tasks: Submissions follow fixed templates and sections, making it easier to: Score consistently (criterion-based rubrics) and Detect anomalies (e.g. answers that do not match the task or that look machine-generated).</li>
+        <li>Time-on-task and interaction data: Where applicable, platform can record engagement metrics (e.g. time per module, steps in refinement loops) to flag impossible completion patterns (e.g. very short time for complex tasks).</li>
+    </ul>
+
+    <h4>5.2 Detecting Non-Authentic and AI-Generated Answers</h4>
+    <p>TASI applies industry-aligned techniques to support integrity of written and practical work:</p>
+    <table>
+        <tr>
+            <th>Mechanism</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>AI-generated text detection (indicative)</td>
+            <td>Use of statistical and classifier-based methods (e.g. perplexity, burstiness, existing detectors) to flag submissions that are likely AI-generated, for targeted human review rather than automatic fail.</td>
+        </tr>
+        <tr>
+            <td>Plagiarism and similarity checks</td>
+            <td>Comparison against known sources and other submissions to detect copying and recycled content.</td>
+        </tr>
+        <tr>
+            <td>Consistency with task and rubric</td>
+            <td>Automated checks that submissions address the specific prompt, use the required sections, and align with the rubric (reduces off-topic or outsourced answers).</td>
+        </tr>
+        <tr>
+            <td>Confidence flagging</td>
+            <td>Grading AI outputs a confidence level (e.g. High / Medium / Low) per criterion; low-confidence or borderline submissions are routed to human moderators.</td>
+        </tr>
+        <tr>
+            <td>Human-in-the-loop</td>
+            <td>Final fail or borderline decisions are not made by AI alone; flagged and sample submissions are reviewed by assessors, in line with SDAIA governance expectations.</td>
+        </tr>
+        <tr>
+            <td>Structured submission requirements</td>
+            <td>Mandatory use of templates and sectioned responses to reduce “paste-in” free-form essays that are hard to verify.</td>
+        </tr>
+    </table>
+
+    <h4>5.3 Safeguards for Responsible AI Use</h4>
+    <table>
+        <tr>
+            <th>Mechanism</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Input screening</td>
+            <td>User inputs (e.g. prompts, forum posts) are screened for policy-violating or unsafe content before processing.</td>
+        </tr>
+        <tr>
+            <td>Output sanitisation</td>
+            <td>AI-generated content shown to learners is sanitised (e.g. PII redaction, safety filters).</td>
+        </tr>
+        <tr>
+            <td>Audit and logging</td>
+            <td>Security-relevant and assessment-relevant events can be logged for audit and review.</td>
+        </tr>
+        <tr>
+            <td>Governance alignment</td>
+            <td>Design and policies align with SDAIA governance and ethical AI use expectations.</td>
+        </tr>
+    </table>
+
+    <h3>6. Testing Critical Thinking Abilities</h3>
+    <p>Assessment is designed to test critical thinking, not only recall or simple application:</p>
+    <table>
+        <tr>
+            <th>Approach</th>
+            <th>How it is implemented</th>
+        </tr>
+        <tr>
+            <td>Scenario-based questions</td>
+            <td>Quiz and practical tasks use realistic government/sector scenarios (e.g. “Select and justify an AI solution for a new public service portal”) so that reasoning and trade-offs are assessed.</td>
+        </tr>
+        <tr>
+            <td>Justification and reasoning</td>
+            <td>Tasks require written justification (e.g. decision framework application, tool choice, risk analysis), which is scored via criterion-based rubrics (e.g. “Decision Framework Application”, “Governance Awareness”, “Critical Evaluation”).</td>
+        </tr>
+        <tr>
+            <td>Refinement and improvement</td>
+            <td>Practicals require iterative refinement (e.g. prompt v1 &rarr; feedback &rarr; prompt v2 &rarr; final output), assessing ability to evaluate and improve AI outputs.</td>
+        </tr>
+        <tr>
+            <td>Critical evaluation of AI output</td>
+            <td>Dedicated tasks (e.g. “Critical Output Evaluation & Improvement Strategy”) where learners identify accuracy risks, hallucination risks, and governance exposure and propose mitigation strategies.</td>
+        </tr>
+        <tr>
+            <td>Application across contexts</td>
+            <td>Tasks are varied (e.g. policy drafting, data synthesis, tool selection, compliance) so that transfer of learning and context-appropriate reasoning are tested.</td>
+        </tr>
+        <tr>
+            <td>Rubric-based scoring</td>
+            <td>Each criterion (e.g. “Prompt Structure”, “Context Layering”, “Chain-of-Thought”, “Refinement Loop”, “Critical Evaluation”) is scored separately with rationale, making critical thinking dimensions explicit and auditable.</td>
+        </tr>
+    </table>
+    <p>The assessment model is designed to evidence deep learning and applied critical thinking rather than knowledge recall. Scenario-based tasks require learners to analyse realistic sector challenges, justify decisions, and apply structured frameworks, supporting higher-order cognition and knowledge transfer (Biggs & Tang, 2011; Bransford et al., 2000). Rubric-based evaluation makes reasoning explicit and measurable, strengthening reflective and self-regulated learning (Nicol & Macfarlane-Dick, 2006). Iterative refinement activities mirror real workplace practice and build expertise through feedback-driven improvement (Ericsson, 2006), while critical evaluation of AI outputs develops risk awareness and responsible decision-making aligned with future workforce skills (OECD, 2021). Together, these approaches ensure learners can confidently apply knowledge in complex real-world contexts, leading to stronger performance outcomes and practical professional capability.</p>
+
+    <div class="page-break"></div>
+
+    <h2>Addendum 4: Three Tiers: Technical Specification and User Capabilities</h2>
+    <h3>Summary Table – Tiers vs Capabilities</h3>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Essential Gateway</th>
+            <th>Catalyst</th>
+            <th>Vision 2030</th>
+        </tr>
+        <tr>
+            <td>SAMAI 2 full course (all units)</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Dual-language (EN/AR) + narration</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>All in-platform practicals & labs</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Assessment: quiz + practical (e.g. 40% / 60%)</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>AI-assisted rubric + human moderation</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Anti-cheating & AI-answer detection</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Critical thinking rubrics</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Guided prompt building / sandbox</td>
+            <td>Limited / cached</td>
+            <td>Yes (capped)</td>
+            <td>Yes (high/uncapped)</td>
+        </tr>
+        <tr>
+            <td>3D / simulations</td>
+            <td>Limited / pre-rendered</td>
+            <td>Yes</td>
+            <td>Expanded</td>
+        </tr>
+        <tr>
+            <td>One-to-one AI support agent</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Professional forum</td>
+            <td>No</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Live creation / prompting</td>
+            <td>Low (playback/cached)</td>
+            <td>Mixed (balanced)</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Scale (1M+ users, 25k concurrent)</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+    </table>
+
+
+
+<script>
+/* ===== Shared Tabs Navigation (added) ===== */
+(function () {
+  const path = (location.pathname || '').split('/').pop() || 'index.html';
+  const file = decodeURIComponent(path);
+  const isHome = (file === 'index.html' || file === '01Proposal.html' || file === '');
+  const current =
+    isHome ? 'home' :
+    (file === '02 Technical.html' ? 'technical' :
+    (file === '03 Tier.html' ? 'tier' : 'home'));
+
+  document.querySelectorAll('.tabs-nav a.tab').forEach((a) => {
+    if (a.dataset.tab === current) {
+      a.setAttribute('aria-current', 'page');
+    } else {
+      a.removeAttribute('aria-current');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
