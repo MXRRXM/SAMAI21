@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Million Trained SDAIA x SAMAI 2 x Manifest XR</title>
+    <style>
+        :root {
+            /* Updated Palette to match the futuristic style */
+            --primary-blue: #00bcd4; /* Cyan/Holo Blue */
+            --secondary-blue: #0056b3;
+            --sdaia-green: #00e676; /* Vibrant Green */
+            --vision-red: #ff5252;
+            --border-light: #37474f; /* Darker border */
+            --bg-main: #10151c; /* Dark background */
+            --bg-offset: #1a202c; /* Slightly lighter dark */
+            --text-dark: #e0e0e0; /* Light text */
+            --text-light: #b0bec5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
+            margin: 0;
+            padding: 0;
+            /* Subtle tech background pattern */
+            background-image:
+                linear-gradient(rgba(0, 188, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 188, 212, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .header-bar {
+            background-color: var(--primary-blue);
+            height: 4px;
+            width: 100%;
+            box-shadow: 0 0 10px var(--primary-blue);
+        }
+
+        /* Banner Space - Updated for positioning */
+        .banner-container {
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            background-color: var(--bg-main);
+            padding: 20px 0;
+        }
+
+        .banner-image {
+            max-width: 1000px;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--primary-blue);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+            display: block;
+        }
+
+        /* Title positioned on top of the banner with enhanced styling */
+        .overlay-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3.5em; /* Larger size */
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.1;
+            /* Enhanced glow and shadow for contrast */
+            text-shadow:
+                0 0 10px rgba(0, 0, 0, 1),
+                0 0 20px rgba(0, 0, 0, 1),
+                0 0 30px var(--primary-blue),
+                0 0 40px var(--primary-blue);
+            letter-spacing: 1px;
+            width: 90%;
+            max-width: 800px;
+            pointer-events: none; /* Allows clicking through the text */
+            z-index: 10;
+            margin: 0;
+        }
+
+        /* Sub-text styling for the second line */
+        .overlay-subtitle {
+            font-size: 0.5em; /* Smaller than main title */
+            display: block;
+            margin-top: 10px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto 40px auto;
+            background: var(--bg-offset);
+            padding: 60px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            border-radius: 4px;
+            border: 1px solid #2d3748;
+        }
+
+        /* Updated Main Title Styling in document body */
+        .main-proposal-title {
+            color: white; /* Changed for better contrast in dark mode */
+            font-size: 2.6em;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1.6em;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            margin-left: 20px;
+            height: 1px;
+            background: var(--border-light);
+        }
+
+        h3 {
+            color: var(--text-dark);
+            font-size: 1.2em;
+            margin-top: 30px;
+            border-left: 3px solid var(--primary-blue);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 1.05em;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Commercial Matrix */
+        .commercial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .tier-box {
+            padding: 25px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            text-align: center;
+            background: #2d3748;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tier-box:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .tier-box.highlight {
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+        }
+
+        .tier-title { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; text-transform: uppercase; color: white; }
+        .tier-price { font-size: 1.8em; font-weight: 800; margin: 10px 0; color: var(--primary-blue); }
+
+        .green-text { color: var(--sdaia-green); }
+        .blue-text { color: var(--primary-blue); }
+        .red-text { color: var(--vision-red); }
+
+        /* Timeline Items */
+        .timeline-box {
+            background: #2d3748;
+            padding: 20px 30px;
+            border-left: 4px solid var(--sdaia-green);
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* ============================
+           Vision 2030 Tier Visual
+           ============================ */
+        .vision2030-tier-space {
+            margin: 35px 0 45px 0;
+            padding: 18px;
+            background: #0f1724;
+            border: 1px solid rgba(0, 188, 212, 0.35);
+            border-radius: 12px;
+            box-shadow: 0 0 28px rgba(0, 188, 212, 0.12);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .vision2030-tier-space::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            pointer-events: none;
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 82, 82, 0.12),
+                inset 0 0 0 1px rgba(0, 188, 212, 0.22);
+            opacity: 0.9;
+        }
+
+        .vision2030-tier-figure {
+            margin: 0;
+        }
+
+        .vision2030-tier-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 188, 212, 0.28);
+            box-shadow: 0 0 26px rgba(0, 188, 212, 0.14);
+        }
+
+        .vision2030-tier-caption {
+            margin-top: 12px;
+            color: var(--text-light);
+            font-size: 0.95em;
+            text-align: center;
+        }
+
+        .vision2030-tier-caption .accent {
+            color: var(--vision-red);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 30px; }
+            .commercial-grid { grid-template-columns: 1fr; }
+            .overlay-title { font-size: 2em; }
+        }
+    
+/* ===== Shared Tabs Navigation (added) ===== */
+.tabs-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(16, 21, 28, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 188, 212, 0.25);
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.tabs-nav .tabs-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tabs-nav .brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+.tabs-nav .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tabs-nav a.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 190, 197, 0.18);
+  color: rgba(224, 224, 224, 0.92);
+  font-size: 0.95em;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.tabs-nav a.tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 188, 212, 0.55);
+  background: rgba(0, 188, 212, 0.08);
+}
+.tabs-nav a.tab[aria-current="page"] {
+  border-color: rgba(0, 188, 212, 0.9);
+  background: rgba(0, 188, 212, 0.16);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(0, 188, 212, 0.22);
+}
+@media (prefers-color-scheme: light) {
+  .tabs-nav { background: rgba(255,255,255,0.9); border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .tabs-nav .brand { color: #111; }
+  .tabs-nav a.tab { color: rgba(17,17,17,0.85); border-color: rgba(0,0,0,0.12); }
+  .tabs-nav a.tab:hover { background: rgba(0, 86, 179, 0.07); border-color: rgba(0, 86, 179, 0.35); }
+  .tabs-nav a.tab[aria-current="page"] { background: rgba(0, 86, 179, 0.12); border-color: rgba(0, 86, 179, 0.65); box-shadow: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== Shared Tabs Navigation (added) ===== -->
+<nav class="tabs-nav" role="navigation" aria-label="Document tabs">
+  <div class="tabs-wrap">
+    <div class="brand">SAMAI 2 Docs</div>
+    <ul class="tabs">
+      <li><a class="tab" data-tab="home" href="index.html">01 Proposal</a></li>
+      <li><a class="tab" data-tab="technical" href="02%20Technical.html">02 Technical</a></li>
+      <li><a class="tab" data-tab="tier" href="03%20Tier.html">03 Tier</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="header-bar"></div>
+
+<div class="banner-container">
+    <h1 class="overlay-title">
+        1 Million Trained
+        <span class="overlay-subtitle">SDAIA x SAMAI 2 x Manifest XR</span>
+    </h1>
+
+    <img src="banner-image-file.png" alt="Proposal Banner: Manifest XR and SDAIA SAMAI 2 Collaboration" class="banner-image">
+</div>
+
+<div class="container">
+    <h1 class="main-proposal-title">1 Million Trained SDAIA x SAMAI 2 x Manifest XR</h1>
+    <div class="subtitle">Manifest XR – TASI Academy Collaboration</div>
+
+    <h2>1. Programme Overview and Strategic Alignment</h2>
+    <p>This proposal sets out a comprehensive national AI capability development programme delivered by Manifest XR through TASI Academy in alignment with SDAIA’s SAMAI 2 initiative. The programme is designed to build applied, responsible AI capability at national scale, transforming workforce productivity, strengthening governance, and accelerating innovation across priority sectors in the Kingdom of Saudi Arabia.</p>
+
+    <p>The structure of this proposal reflects a fully integrated model comprising:</p>
+    <ul>
+        <li>Strategic intent and national alignment</li>
+        <li>Pedagogical design principles grounded in evidence-based adult learning</li>
+        <li>Advanced technical delivery infrastructure</li>
+        <li>Tiered commercial investment structure</li>
+        <li>Governance and partnership framework</li>
+        <li>Scalable assessment, safety, and certification systems</li>
+        <li>Detailed technical addenda outlining platform readiness and capability</li>
+    </ul>
+
+    <p>The programme emphasises practical, hands-on learning (minimum 60% applied), immersive digital delivery, dual-language accessibility (English and Arabic), AI-assisted but human-governed assessment, and scalable national deployment (1M+ learners annually).</p>
+
+    <p>The three-tier commercial structure (Essential Gateway, Catalyst, Vision 2030) ensures flexibility of capability and investment, while maintaining full alignment with SAMAI 2 curriculum expectations, SDAIA governance standards, and Vision 2030 transformation objectives.</p>
+
+    <p>The sections that follow detail:</p>
+    <ul>
+        <li>Executive vision and strategic objectives</li>
+        <li>Programme design and delivery model</li>
+        <li>Technology infrastructure and neutrality</li>
+        <li>Commercial structure and investment tiers</li>
+        <li>Governance model and next steps</li>
+        <li>Comprehensive technical specifications (Addenda 1–4)</li>
+    </ul>
+
+    <p>Together, these components define a nationally scalable, governance-aligned, technologically advanced AI capability programme built for sustainable impact within the Kingdom.</p>
+
+    <h2>2. Executive Summary</h2>
+    <p>Manifest XR, through TASI Academy, proposes a national AI capability development program, providing the most technologically advanced training on a national scale that is data-informed and designed to maximize learning. This program is fully aligned with SDAIA's SAMAI 2 initiative, aiming to rapidly transform the workforce in priority government sectors. It will equip participants with practical, responsible AI competencies, boosting productivity, efficiency, innovation, and ethical governance, thereby directly supporting Saudi Vision 2030 objectives. Manifest XR commits to establishing a significant operational presence within the Kingdom of Saudi Arabia, ensuring sustainable knowledge transfer, value for money, alignment with national strategic interests, and further aiming to cultivate a unicorn company built from within the Kingdom and for the benefit of the Kingdom.</p>
+
+    <h2>3. Strategic Programme Objectives</h2>
+    <ul>
+        <li>Develop national AI literacy and applied capability at scale (1 Million people).</li>
+        <li>Enable practical workplace adoption of AI tools and workflows.</li>
+        <li>Strengthen responsible AI governance aligned with SDAIA standards.</li>
+        <li>Support sector-specific innovation outcomes.</li>
+        <li>Build a national community around a sustainable learning culture empowering economic growth.</li>
+    </ul>
+
+    <h2>4. Programme Design Principles</h2>
+    <p>This program maximizes workforce transformation through evidence-based adult learning, emphasizing over 60% experiential and hands-on application for practice-led competency development to support higher levels of knowledge retention and skill development. Supported by continuous assessment, immediate workplace implementation, and an advanced learning infrastructure featuring AI-powered assessment (with safeguards against AI-generated answers) and Universal Design for Learning (UDL), participants gain immediately deployable skills that generate organizational value.</p>
+
+    <h2>5. Cutting Edge technology</h2>
+    <p>Leveraging cutting-edge innovation, TASI Academy’s flexible digital infrastructure enables nationwide accessibility across desktop, mobile, and AR/VR/immersive environments. This multimodal approach enhances engagement and supports scalable national participation with the addition of 3D capabilities to ensure Saudi Arabia remains at the forefront of digital innovation, can deliver highly effective, experiential training experiences across all critical sectors, and will set the global standard for national capability building.</p>
+
+    <h2>6. Platform Neutrality and Transparency</h2>
+    <p>Maintaining strict vendor neutrality, TASI Academy provides balanced exposure to leading global AI ecosystems (e.g. ChatGPT, Copilot, Gemini, Claude, Canva AI, Adobe Firefly, NotebookLM, workflow automation). It emphasizes transferable competencies, critical evaluation, context-appropriate tool selection, interoperability, and sustainability, aligning with SDAIA’s vision for an open, ethical national AI ecosystem.</p>
+
+    <h2>7. Delivery Components</h2>
+    <p>Digital learning, delivered via TASI Academy and AthkaX, includes structured modules, practical labs, continuous assessment, and certification. Regional leadership and strategic engagement events in Riyadh, Jeddah, Medina, Dammam, and AlUla accelerate adoption and collaboration. A unit-aligned webinar series offers demonstrations, guided implementation, expert Q&A, and reinforcement learning. Assessment is designed to develop and evidence applied critical thinking, enabling learners to translate deep knowledge into confident, real-world decision-making and professional performance.</p>
+
+    <h2>8. Rollout Timeline</h2>
+    <div class="timeline-box">
+        <p><strong>Unit 1 Launch:</strong> June 2026</p>
+        <p><strong>Subsequent Units:</strong> Released at two-week intervals</p>
+        <p>This phased deployment enables rapid adoption while maintaining quality assurance.</p>
+    </div>
+
+    <h2>9. Commercial Proposal</h2>
+    <p>Manifest XR offers three distinct tiers, each with varying user capabilities, for an assumed 1 million users. Vision 2030, the most technologically advanced tier, will leverage 3D, VR, AR, and immersive capabilities to create the most advanced national training program ever. The commercial proposal covers instructional design, content development (including applied labs), platform integration, deployment, governance, reporting, and quality assurance. Webinar and regional event delivery are exclusive to the Vision 2030 tier.</p>
+
+    <div class="commercial-grid">
+        <div class="tier-box">
+            <div class="tier-title green-text">Essential Gateway</div>
+            <div class="tier-price">$12.99M</div>
+            <p>$12.99 Per Person</p>
+        </div>
+        <div class="tier-box">
+            <div class="tier-title blue-text">Catalyst</div>
+            <div class="tier-price">$19.99M</div>
+            <p>$19.99 Per Person</p>
+        </div>
+        <div class="tier-box highlight">
+            <div class="tier-title red-text">Vision 2030</div>
+            <div class="tier-price">$49.99M</div>
+            <p>$49.99 Per Person</p>
+            <p><small><em>Includes Immersive & Event Suite</em></small></p>
+        </div>
+    </div>
+
+    <!-- Vision 2030 Tier Visual (integrated image) -->
+    <div class="vision2030-tier-space">
+        <figure class="vision2030-tier-figure">
+            <img
+                class="vision2030-tier-image"
+                src="a_photograph_of_a_saudi_arabian_man_in_a_futuristi.png"
+                alt="Vision 2030 Tier: Ultra-futuristic AI visual with AR/VR and holographic NEOM-style city model"
+                loading="lazy"
+            />
+            <figcaption class="vision2030-tier-caption">
+                <span class="accent">Vision 2030 Tier</span> — Immersive AR/VR + holographic city modelling + advanced analytics experience.
+            </figcaption>
+        </figure>
+    </div>
+
+    <p>The Vision 2030 package, offering an exceptional learning experience for the rapid acquisition of knowledge through doing and simulation, includes all Essential Gateway and Catalyst capabilities, augmented with 3D, VR, AR, and immersive features. It also provides expanded webinar delivery, comprehensive regional promotional events, continuous program iteration, and adaptive updates reflecting global AI advancements and more (see technical addendum below).</p>
+
+    <h2>10. Technical Capability and Features</h2>
+    <p>See Addendum 1, 2, 3 and 4 below.</p>
+
+    <h2>11. Governance and Partnership Model</h2>
+    <p>The programme will operate under coordinated collaboration between:</p>
+    <ul>
+        <li>SDAIA strategic oversight</li>
+        <li>TASI Academy delivery infrastructure</li>
+        <li>Manifest XR programme design and execution leadership</li>
+    </ul>
+    <p>Dedicated coordination representatives will ensure alignment, reporting transparency, and continuous improvement.</p>
+
+    <h2>12. Recommended Next Steps</h2>
+    <p>Formal approval of programme alignment with SAMAI 2.<br>
+    Upon approval, programme mobilisation will commence immediately.</p>
+
+</div>
+
+
+
+<script>
+/* ===== Shared Tabs Navigation (added) ===== */
+(function () {
+  const path = (location.pathname || '').split('/').pop() || 'index.html';
+  const file = decodeURIComponent(path);
+  const isHome = (file === 'index.html' || file === '01Proposal.html' || file === '');
+  const current =
+    isHome ? 'home' :
+    (file === '02 Technical.html' ? 'technical' :
+    (file === '03 Tier.html' ? 'tier' : 'home'));
+
+  document.querySelectorAll('.tabs-nav a.tab').forEach((a) => {
+    if (a.dataset.tab === current) {
+      a.setAttribute('aria-current', 'page');
+    } else {
+      a.removeAttribute('aria-current');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
