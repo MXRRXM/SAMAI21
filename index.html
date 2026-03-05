@@ -270,11 +270,6 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 188, 212, 0.25);
-  width: 100vw;
-  left: 0;
-  right: 0;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
 }
 .tabs-nav .tabs-wrap{
   max-width: 1100px;
@@ -338,11 +333,12 @@
 <nav class="tabs-nav" role="navigation" aria-label="Document tabs">
   <div class="tabs-wrap">
     <div class="brand">SAMAI 2 Docs</div>
-    <ul class="tabs">
-      <li><a class="tab" data-tab="home" href="index.html">01 Proposal</a></li>
-      <li><a class="tab" data-tab="technical" href="02%20Technical.html">02 Technical</a></li>
-      <li><a class="tab" data-tab="tier" href="03%20Tier.html">03 Tier</a></li>
-    </ul>
+<ul class="tabs">
+  <li><a class="tab" data-tab="home" href="index.html">01 Proposal</a></li>
+  <li><a class="tab" data-tab="technical" href="02%20Technical.html">02 Technical</a></li>
+  <li><a class="tab" data-tab="tier" href="03%20Tier.html">03 Tier</a></li>
+  <li><a class="tab" data-tab="demo" href="04%20demo.html">04 Demo</a></li>
+</ul>
   </div>
 </nav>
 
@@ -484,15 +480,18 @@
 
 
 <script>
-/* ===== Shared Tabs Navigation (added) ===== */
+/* ===== Shared Tabs Navigation (Updated for 04 Demo) ===== */
 (function () {
   const path = (location.pathname || '').split('/').pop() || 'index.html';
   const file = decodeURIComponent(path);
   const isHome = (file === 'index.html' || file === '01Proposal.html' || file === '');
+  
+  // Updated logic to include 'demo'
   const current =
     isHome ? 'home' :
     (file === '02 Technical.html' ? 'technical' :
-    (file === '03 Tier.html' ? 'tier' : 'home'));
+    (file === '03 Tier.html' ? 'tier' : 
+    (file === '04 demo.html' ? 'demo' : 'home')));
 
   document.querySelectorAll('.tabs-nav a.tab').forEach((a) => {
     if (a.dataset.tab === current) {
