@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 Demo - AI Platform Integration Proposal</title>
+<style>
+    /* Global Styles from Original Proposal */
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; }
+    h1, h2, h3 { color: #2c3e50; }
+    
+    /* Shared Tabs Navigation Styling */
+    .tabs-nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: rgba(16, 21, 28, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 188, 212, 0.25);
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-bottom: 30px;
+    }
+    .tabs-nav .tabs-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tabs-nav .brand { font-weight: 700; color: #ffffff; margin-right: 8px; white-space: nowrap; }
+    .tabs-nav .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .tabs-nav a.tab {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(176, 190, 197, 0.2);
+      color: rgba(224, 224, 224, 0.9);
+      font-size: 0.9em;
+      transition: all 0.2s;
+    }
+    .tabs-nav a.tab[aria-current="page"] {
+      border-color: #00bcd4;
+      background: rgba(0, 188, 212, 0.15);
+      color: #00bcd4;
+      font-weight: bold;
+    }
+
+    /* Original Table and Logo Styling */
+    .logo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding: 20px 0; border-bottom: 2px solid #f4f4f4; }
+    .logo-placeholder { width: 150px; height: 80px; background: #f9f9f9; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px; font-weight: bold; color: #666; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; table-layout: fixed; }
+    th, td { border: 1px solid #ddd; padding: 15px; text-align: left; vertical-align: top; word-wrap: break-word; }
+    th { background-color: #f4f4f4; }
+    .unit-col { width: 15%; }
+    .proposal-col { width: 35%; }
+    .example-col { width: 50%; }
+    ul, ol { padding-left: 20px; margin-top: 5px; }
+    li { margin-bottom: 5px; }
+    .section-title { font-weight: bold; text-decoration: underline; display: block; margin-bottom: 8px; color: #2c3e50; }
+    .video-container { display: flex; gap: 20px; margin-top: 20px; }
+    .video-wrapper { flex: 1; }
+    video { width: 100%; border: 2px solid #ccc; border-radius: 4px; background: #000; height: 300px; }
+    .video-label { display: block; margin-top: 8px; font-weight: bold; text-align: center; color: #2c3e50; }
+</style>
+</head>
+<body>
+
+    <nav class="tabs-nav">
+      <div class="tabs-wrap">
+        <div class="brand">SAMAI 2</div>
+        <ul class="tabs">
+          <li><a class="tab" data-tab="home" href="01Proposal.html">01 Proposal</a></li>
+          <li><a class="tab" data-tab="technical" href="02 Technical.html">02 Technical</a></li>
+          <li><a class="tab" data-tab="tier" href="03 Tier.html">03 Tier</a></li>
+          <li><a class="tab" data-tab="demo" href="04 demo.html" aria-current="page">04 Demo</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="logo-header">
+        <div class="logo-placeholder">
+            <img src="Manifest-xr-logo.jpeg" alt="Manifest XR" style="max-width:100%; max-height:100%; display:block;">
+        </div>
+        <div class="logo-placeholder">
+            <img src="sdaia-logo.png" alt="SDAIA" style="max-width:100%; max-height:100%; display:block;">
+        </div>
+        <div class="logo-placeholder">
+            <img src="samai-2-logo.png" alt="SAMAI 2" style="max-width:100%; max-height:100%; display:block;">
+        </div>
+    </div>
+
+    <h1>Unit: AI Platform integration proposal</h1>
+    <p><strong>Practical example from the course design</strong></p>
+
+    <h2 id="api-integrations">API integrations</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="unit-col">Unit</th>
+                <th class="proposal-col">AI Platform integration proposal</th>
+                <th class="example-col">Practical example from the course design</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Unit 1: Prompt Engineering & AI Tools (3–4 Hours)</strong></td>
+                <td>
+                    <ol>
+                        <li>Google Gemini</li>
+                        <li>Llama 2 (and implied Llama 3 for future open-weights model)</li>
+                        <li>OpenAI (ChatGPT)</li>
+                        <li>Anthropic (Claude)</li>
+                        <li>Hugging Face (as an ecosystem for open-source models)</li>
+                        <li>GitHub Copilot</li>
+                        <li>Replit AI</li>
+                        <li>Midjourney</li>
+                        <li>DALL-E</li>
+                    </ol>
+                </td>
+                <td>
+                    <span class="section-title">Chain-of-Thought Prompting</span>
+                    <ul>
+                        <li><strong>Example:</strong> Step 1: Identify compliance criteria. Step 2: Compare regulation. Step 3: Identify gaps.</li>
+                        <li><strong>Purpose:</strong> Enhances structured reasoning and allows the AI to break down complex problems.</li>
+                        <li><strong>Practical Application:</strong> Provide a complex problem (e.g., "Analyze the budget implications of a new policy across three departments").</li>
+                        <li><strong>Task:</strong> Participants design a chain-of-thought prompt to guide an AI through the analysis steps. They will run the prompt in a sandbox environment (e.g., using a Gemini or Claude demo) and evaluate the step-by-step output.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Unit 2: Ethical and Responsible AI Use (2–3 Hours)</strong></td>
+                <td>
+                    <ol>
+                        <li>Google Gemini (for general generative tasks, and for evaluating content for ethical concerns)</li>
+                        <li>OpenAI (ChatGPT) (for general generative tasks, and for evaluating content for ethical concerns)</li>
+                        <li>Anthropic (Claude) (for general generative tasks, and for evaluating content for ethical concerns)</li>
+                        <li>Llama 2 / Llama 3 (as examples of open-weights models for sovereign control and ethical fine-tuning)</li>
+                        <li>Hugging Face (as an ecosystem for exploring and evaluating open-source models, potentially for bias)</li>
+                        <li>GitHub Copilot / Replit AI (as examples of code-generating AIs where governance and audit trails are critical)</li>
+                        <li>Midjourney / DALL-E (as examples of image-generating AIs where ethical considerations like bias in representation are relevant)</li>
+                        <li>Internal Knowledge Management AI Systems (conceptual, for synthesis and information retrieval within secure government environments)</li>
+                        <li>Enterprise AI Governance Platforms (conceptual, for managing AI models, tracking usage, and ensuring compliance, e.g., features found in Azure AI Governance or Google Cloud AI Platform Unified)</li>
+                        <li>Data Logging Tools (conceptual, integrated into AI systems for audit trails)</li>
+                        <li>Privacy-Enhancing AI Techniques / Data Anonymization Tools (conceptual, e.g., differential privacy libraries, synthetic data generation for sensitive data handling)</li>
+                        <li>AI Bias Detection Toolkits (conceptual, e.g., functionalities similar to IBM AI Fairness 360 or Google's What-if Tool)</li>
+                        <li>XAI (Explainable AI) Frameworks (conceptual, for understanding "why" AI made a decision, often integrated into specialized AI models)</li>
+                    </ol>
+                </td>
+                <td>
+                    <span class="section-title">Human-in-the-Loop Principles</span>
+                    <ul>
+                        <li><strong>Concept:</strong> Emphasizing AI as an assistant, not an authority. Human decision-making and responsibility remain paramount.</li>
+                        <li><strong>Frameworks:</strong> Introduction to output validation frameworks (e.g., cross-referencing, logical consistency checks) and escalation logic (when to bypass AI).</li>
+                        <li><strong>Interactive Scenario:</strong> Participants review a brief AI-generated summary of citizen feedback for a new public service. They must:
+                            <ol>
+                                <li>Identify one potential factual error or missing critical context that a human would immediately spot.</li>
+                                <li>Describe the specific human validation steps they would take to rectify this, referencing the "assistant, not authority" principle.</li>
+                                <li>Reflect on a situation where they would bypass AI for this task entirely, and why.</li>
+                            </ol>
+                        </li>
+                        <li><strong>Tool Reference:</strong> Applicable to all generative AI tools like Google Gemini, OpenAI (ChatGPT), Anthropic (Claude), and internal knowledge management AI systems used for synthesis.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Unit 3: AI Content Generation and Media Creation (3–4 Hours)</strong></td>
+                <td>
+                    <ol>
+                        <li>Google Gemini (General generative text, summarization, conceptual image generation, multimodal capabilities)</li>
+                        <li>OpenAI (ChatGPT) (General generative text, summarization, creative writing)</li>
+                        <li>Anthropic (Claude) (General generative text, particularly for longer documents and nuanced understanding, ethical reasoning)</li>
+                        <li>Llama 2 / Llama 3 (Examples of open-weights models for custom text generation, potentially fine-tuned for specific government communication styles, image generation capabilities)</li>
+                        <li>Hugging Face (Ecosystem for exploring and deploying various open-source models across modalities, including text, image, and audio)</li>
+                        <li>DALL-E (Image generation)</li>
+                        <li>Midjourney (Image generation, often with more artistic control and distinct styles)</li>
+                        <li>Stable Diffusion (Open-source image generation, highly customizable for specific visual outputs)</li>
+                        <li>Adobe Firefly (Conceptual, for integrated generative AI within creative suites, especially for image editing, generation, and potentially graphic design)</li>
+                        <li>ElevenLabs (High-quality AI voice generation, voice cloning)</li>
+                        <li>Google Text-to-Speech (API for generating synthetic speech for various applications)</li>
+                        <li>Synthesia (AI video generation from text, including avatars and customizable scenes)</li>
+                        <li>Descript (AI-powered video editing, transcription, and voice cloning for audio/video summaries, podcast editing)</li>
+                        <li>RunwayML (Conceptual, for advanced generative video, AI-powered video editing features, and cinematic effects)</li>
+                    </ol>
+                </td>
+                <td>
+                    <span class="section-title">Interactive Exercise</span>
+                    <ul>
+                        <li><strong>Task:</strong> Participants are given a complex, unstructured set of data and a specific government communication objective (e.g., "Draft a new internal policy directive on remote work procedures, including sections for eligibility, responsibilities, and approval process").</li>
+                        <li><strong>Process:</strong> They must use a range of AI sandbox’ (e.g., Google Gemini or ChatGPT demo) to generate a policy draft.</li>
+                        <li><strong>Analysis:</strong> They will then critically analyze the AI's output for structural integrity, tone, and compliance, identifying areas where human legal or policy expertise is irreplaceable.</li>
+                        <li><strong>Tool Reference:</strong> Advanced LLMs like Google Gemini, OpenAI (ChatGPT), Anthropic (Claude), and conceptual specialized legal/policy drafting AIs (e.g., those trained on vast legal corpora) if available.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Unit 4: AI Agents and Workflow Automation (12 Hours)</strong></td>
+                <td>
+                    <ol>
+                        <li>OpenAI Custom GPTs (Primary tool for agent building)</li>
+                        <li>OpenAI Actions API (For external tool invocation by GPTs)</li>
+                        <li>n8n (Primary visual automation platform for workflow design)</li>
+                        <li>Google Gemini (As a core LLM for agentic reasoning, also for its multimodal capabilities)</li>
+                        <li>OpenAI (GPT-4 and other models) (As core LLMs for agentic reasoning)</li>
+                        <li>Anthropic (Claude) (As a core LLM for agentic reasoning, particularly for complex text processing)</li>
+                        <li>Llama 2 / Llama 3 (Examples of open-weights LLMs that could power custom agents in a sovereign environment)</li>
+                        <li>Hugging Face (Ecosystem for exploring and deploying various open-source models that could serve as agent components or tools)</li>
+                        <li>Zapier / Make (formerly Integromat) (Conceptual, as alternative no-code/low-code automation platforms)</li>
+                        <li>Microsoft Power Automate (Conceptual, for enterprise-level automation and integration within Microsoft ecosystems)</li>
+                    </ol>
+                </td>
+                <td>
+                    <span class="section-title">OpenAI Agent Builder & Advanced Configuration (3 hours 45 minutes)</span>
+                    <ul>
+                        <li><strong>Custom GPTs:</strong> Creation & Actions API</li>
+                        <li><strong>Concept:</strong> Hands-on introduction to creating Custom GPTs (or similar agent-building features in other platforms).</li>
+                        <li><strong>Config:</strong> Configuring the agent's instructions, capabilities, and integrating custom "Actions" via OpenAPI specifications to allow interaction with external systems.</li>
+                        <li><strong>Walkthrough:</strong> Step-by-step demonstration of creating a Custom GPT, defining its purpose, and setting up a simple mock Action (e.g. a "lookup" API call that returns static data) within the OpenAI environment.</li>
+                        <li><strong>Tool Reference:</strong> OpenAI Custom GPTs, OpenAPI Specification (conceptual for Actions API).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Unit 5: Vibe Coding – Build AI-Powered Micro Tools (4 Hours)</strong></td>
+                <td>
+                    <ol>
+                        <li>GitHub Copilot (Primary AI code assistant for generation, debugging, refactoring)</li>
+                        <li>Google Gemini Code (AI code assistant capabilities, integrated with Google's ecosystem)</li>
+                        <li>Replit AI (Online IDE with integrated AI coding assistance)</li>
+                        <li>Code Llama (Conceptual, as an open-source large language model specifically for code generation and understanding)</li>
+                        <li>OpenAI (ChatGPT/GPT-4) (General generative LLMs used for code generation from natural language, debugging explanations, and refactoring suggestions)</li>
+                        <li>Anthropic (Claude) (General generative LLMs used for code generation, debugging, and secure code review discussions)</li>
+                        <li>Streamlit (Python library for quickly building simple web apps/dashboards with minimal code)</li>
+                        <li>Flask (Python web framework for building simple web applications)</li>
+                        <li>n8n (Visual automation tool, relevant for building "Mini workflow tools" with AI integration, as covered in Unit 4)</li>
+                        <li>Python (basic scripting environment) (Underlying language for many micro-tools)</li>
+                        <li>HTML/CSS/JavaScript (basic web technologies) (For building simple web-based interfaces)</li>
+                        <li>Internal Knowledge Management AI Systems (Conceptual, for retrieving documentation relevant to coding tasks)</li>
+                        <li>Enterprise AI Governance Platforms (Conceptual, for managing and monitoring internally developed micro-tools)</li>
+                        <li>Data Logging Tools (Conceptual, for maintaining audit trails of micro-app usage and data processing)</li>
+                        <li>Privacy-Enhancing AI Techniques / Data Anonymization Tools (Conceptual, relevant when micro-apps handle sensitive data)</li>
+                        <li>AI Security Scanners (Conceptual, for identifying vulnerabilities in AI-generated code, e.g., features in Snyk Code AI or DeepCode AI)</li>
+                        <li>XAI (Explainable AI) Frameworks (Conceptual, for understanding decisions made by AI in code generation or debugging)</li>
+                    </ol>
+                </td>
+                <td>
+                    <span class="section-title">AI-Assisted Development: Generate, Debug, Refactor</span>
+                    <ul>
+                        <li><strong>Code Generation:</strong> Using natural language prompts to generate simple code snippets (e.g., Python script for data processing, HTML for a basic web page).</li>
+                        <li><strong>Debugging:</strong> Leveraging AI to identify and explain errors in code, and suggest corrections.</li>
+                        <li><strong>Refactoring:</strong> Asking AI to optimize or improve existing simple code for clarity or efficiency.</li>
+                        <li><strong>Guided Mini-Practical:</strong> Participants will use an AI code assistant sandbox (e.g., GitHub Copilot or Google Gemini Code demo):
+                            <ol>
+                                <li>Generate simple script.</li>
+                                <li>Debug (Simulated) provided pre-written error.</li>
+                                <li>Refactor for readability/comments.</li>
+                            </ol>
+                        </li>
+                        <li><strong>Tool Reference:</strong> GitHub Copilot, Google Gemini Code, Replit AI, Code Llama.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Unit 6: Sector-Based and Role-Based Use Case Labs (2–4 Hours)</strong></td>
+                <td>
+                    <ol>
+                        <li>Google Gemini (General generative LLM, multimodal capabilities, code generation for specific tasks)</li>
+                        <li>OpenAI (ChatGPT/GPT-4) (General generative LLM for text, summarization, agent instructions, code snippets)</li>
+                        <li>Anthropic (Claude) (General generative LLM, particularly for long-form text, policy analysis, and ethical reasoning)</li>
+                        <li>Llama 2 / Llama 3 (Examples of open-weights LLMs that could be fine-tuned for sector-specific knowledge and deployed in sovereign environments)</li>
+                        <li>Hugging Face (Ecosystem for exploring and deploying various open-source models across modalities, including text, image, and audio)</li>
+                        <li>OpenAI Custom GPTs (Primary platform for conceptualizing and designing AI agents with specific personas and guardrails)</li>
+                        <li>n8n (Visual automation tool for designing workflows, integrating AI steps via webhooks)</li>
+                        <li>Python (basic scripting environment) (Underlying language for simple automation scripts, AI-assisted code generation)</li>
+                        <li>Streamlit / Flask (Conceptual, for building simple web interfaces for micro-tools or dashboards)</li>
+                        <li>GitHub Copilot / Google Gemini Code / Replit AI (AI code assistants for generating, debugging, and refactoring scripts/code)</li>
+                        <li>Internal Knowledge Management AI Systems (Conceptual, for retrieving sector-specific policies, guidelines, and data)</li>
+                        <li>Enterprise AI Governance Platforms (Conceptual, for managing and monitoring AI deployments across sectors)</li>
+                        <li>Data Logging Tools (Conceptual, for maintaining audit trails of AI interactions and workflow executions)</li>
+                        <li>Privacy-Enhancing AI Techniques / Data Anonymization Tools (Conceptual, crucial for handling sensitive sector data)</li>
+                        <li>AI Bias Detection Toolkits (Conceptual, for evaluating bias in AI outputs relevant to specific sectors, e.g., recruitment, resource allocation)</li>
+                        <li>XAI (Explainable AI) Frameworks (Conceptual, for understanding AI decisions in critical sector applications like finance or healthcare)</li>
+                    </ol>
+                </td>
+                <td>
+                    <span class="section-title">General Lab Requirements</span>
+                    <ul>
+                        <li>Participants will utilize AI tools in a sandbox environment.</li>
+                        <li>Submission includes:
+                            <ul>
+                                <li>Initial Prompt(s)</li>
+                                <li>AI's Raw Output</li>
+                                <li>Human-Refined Output</li>
+                                <li>Justification of Edits/Design (75-100 words)</li>
+                                <li>Key Human-in-the-Loop Point</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="section-title">Track-Specific Lab Scenarios</span>
+                    <ol>
+                        <li><strong>Government Track Activity 1:</strong> Citizen Request Triage Agent Design (75 mins).</li>
+                        <li><strong>Activity 2:</strong> Policy Summarisation for Citizens: Summarize a provided policy into a concise FAQ entry using AI.</li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Demos</h2>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <video controls>
+                <source src="demo-walkthrough-vr.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="video-label">VR Walkthrough Demo</span>
+        </div>
+        <div class="video-wrapper">
+            <video controls>
+                <source src="simulation-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="video-label">Simulation Environment Demo</span>
+        </div>
+    </div>
+
+</body>
+</html>
